@@ -52,6 +52,13 @@ class FastEngine:
         self.M = np.zeros((len(self.muts), len(self.weeks)))
         for m, wk in mutset.items():
             for i, c in wk.items(): self.M[midx[m], i] = c
+        # LAPIS-reported proportions (count/coverage) for the share metric -
+        # measurement fix: totals_by_date and mutation endpoints use different
+        # date fields, so count/total can exceed 1; use LAPIS's own proportion.
+        self.P = np.zeros_like(self.M)
+        for i, (a, b) in enumerate(self.weeks):
+            for r in json.load(open(files[i]))["data"]:
+                self.P[midx[r["mutation"]], i] = r.get("proportion", 0.0)
         self.struct = _load_struct()
         self.Svec = np.array([structural_score(m, self.struct) for m in self.muts])
         self.logit = np.log10((self.M + 0.5) / (self.totals[None, :] + 1))
@@ -95,6 +102,5 @@ class FastEngine:
         best = 0.0
         for w, (a, b) in enumerate(self.weeks):
             if b <= after or a > lim: continue
-            if self.totals[w] > 0:
-                best = max(best, self.M[i, w] / self.totals[w])
+            best = max(best, self.P[i, w])
         return float(best)

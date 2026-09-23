@@ -6,8 +6,14 @@ sys.path.insert(0, os.path.dirname(__file__))
 from engine_fast import FastEngine as Engine
 
 RES = os.path.join(os.path.dirname(__file__), "..", "results")
-cal = json.load(open(os.path.join(RES, "calibration.json")))
-G_MIN, THETA, THETA_G = cal["G_MIN"], cal["THETA"], cal["THETA_G"]
+import numpy as np
+Z, Z_G = 6.6, 4.8  # GATES_AMENDED_PIVOT2 constants
+def zfilter(rows, key, Zth):
+    if len(rows) < 2: return []
+    v = np.array([r[key] for r in rows]); med = np.median(v)
+    mad = np.median(np.abs(v - med)) * 1.4826
+    if mad == 0: return []
+    return [r for r in rows if (r[key] - med) / mad >= Zth]
 
 e = Engine()
 
@@ -27,8 +33,8 @@ CONTROLS = {"S:D614G": "2020-04-30", "S:N501Y": "2020-12-18", "S:L452R": "2021-0
 first_flag, first_flag_g = {}, {}
 scan_log = []
 for f in FREEZES:
-    alerts = e.scan(f, g_min=G_MIN, theta=THETA)
-    alerts_g = [r for r in e.scan(f, g_min=THETA_G)]  # growth-only comparator
+    alerts = zfilter(e.scan(f), "A", Z)
+    alerts_g = zfilter(e.scan(f), "g", Z_G)  # growth-only comparator
     scan_log.append({"freeze": str(f),
                      "n_alerts_weighted": len(alerts),
                      "weighted": [(r["mutation"], round(r["g"],4), round(r["S"],3), round(r["A"],4)) for r in alerts],
@@ -62,9 +68,9 @@ def neg_run(theta_mode):
     seen = {}
     for f in NEG:
         if theta_mode == "weighted":
-            alerts = e.scan(f, g_min=G_MIN, theta=THETA)
+            alerts = zfilter(e.scan(f), "A", Z)
         else:
-            alerts = [r for r in e.scan(f, g_min=THETA_G)]
+            alerts = zfilter(e.scan(f), "g", Z_G)
         for r in alerts:
             if r["mutation"] not in seen:
                 peak = peak_share_within(r["mutation"], f)
@@ -78,7 +84,7 @@ def neg_run(theta_mode):
 neg_w = neg_run("weighted")
 neg_g = neg_run("growth")
 
-out = {"constants": cal, "catch_test": catch, "scan_log": scan_log,
+out = {"constants": {"Z": Z, "Z_G": Z_G, "rule": "per-scan robust z (GATES_AMENDED_PIVOT2)"}, "catch_test": catch, "scan_log": scan_log,
        "negative_control_weighted": neg_w, "negative_control_growth_only": neg_g,
        "pass_bar": ">=2 controls flagged before recognition",
        "controls_passed_weighted": sum(1 for v in catch.values() if v["flagged_before_recognition_weighted"]),
