@@ -67,17 +67,24 @@ class FastEngine:
         ok = (c4 >= count4_min) & ((c4 / max(t4, 1)) >= p4_min)
         idx = np.where(ok)[0]
         if len(idx) == 0: return []
-        xs = li.astype(float); mx = xs.mean()
-        denom = ((xs - mx)**2).sum()
-        Y = self.logit[np.ix_(idx, li)]
-        g = ((Y - Y.mean(axis=1, keepdims=True)) * (xs - mx)).sum(axis=1) / denom
+        # amended estimator (GATES_AMENDED_PIVOT1): observed weeks only, >=4 of 6
+        OBS = (self.M[np.ix_(idx, li)] > 0)
+        nobs = OBS.sum(axis=1)
+        xs_all = li.astype(float)
         rows = []
         for j, mut_i in enumerate(idx):
-            if g[j] <= 0: continue
-            S = float(self.Svec[mut_i]); A = float(g[j]) * (0.5 + S)
-            if g_min is not None and g[j] < g_min: continue
+            if nobs[j] < 4: continue
+            xs = xs_all[OBS[j]]
+            ys = self.logit[mut_i, li][OBS[j]]
+            mx = xs.mean(); my = ys.mean()
+            denom = ((xs - mx)**2).sum()
+            if denom == 0: continue
+            gj = float(((xs - mx) * (ys - my)).sum() / denom)
+            if gj <= 0: continue
+            S = float(self.Svec[mut_i]); A = gj * (0.5 + S)
+            if g_min is not None and gj < g_min: continue
             if theta is not None and A < theta: continue
-            rows.append({"mutation": self.muts[mut_i], "g": float(g[j]), "S": S, "A": A,
+            rows.append({"mutation": self.muts[mut_i], "g": gj, "S": S, "A": A,
                          "count4": int(c4[mut_i]), "p4": float(c4[mut_i]/max(t4,1))})
         return sorted(rows, key=lambda r: -r["A"])
 

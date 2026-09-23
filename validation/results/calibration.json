@@ -1,0 +1,13 @@
+{
+ "G_MIN": 0.2347,
+ "THETA": 0.3525,
+ "THETA_G": 0.4663,
+ "calibration_freezes": [
+  "2020-05-31",
+  "2020-06-30",
+  "2020-07-31",
+  "2020-08-31"
+ ],
+ "n_candidates": 960,
+ "estimator": "observed-weeks-only slope, >=4 of 6 observed (GATES_AMENDED_PIVOT1)"
+}
