@@ -1,0 +1,3 @@
+B18 protocol agreement: module score vs validation/code/engine.py structural_score
+residues compared: 1273 (every canonical spike position, A->V probe)
+mismatches: 0

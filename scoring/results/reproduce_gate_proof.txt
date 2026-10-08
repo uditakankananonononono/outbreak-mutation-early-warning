@@ -1,0 +1,12 @@
+6M0J ace2_interface 21 contact residues; spike chains ['E'] partners ['A']
+6WPT epitope_S309 22 contact residues; spike chains ['A', 'B', 'C'] partners ['H', 'L', 'D', 'E']
+6XDG epitope_REGN 37 contact residues; spike chains ['E'] partners ['D', 'B', 'C', 'A']
+7C2L epitope_4A8_NTD 16 contact residues; spike chains ['A', 'B', 'C'] partners ['H', 'L', 'I', 'M', 'J', 'N']
+epitope union: 72
+conserved: 967
+regenerated sha256: 8db84b01aae7b5ef0ad911ef163e5aeb2a95cebf7629a7889e4fd8122bf3e7c1
+reference   sha256: 8db84b01aae7b5ef0ad911ef163e5aeb2a95cebf7629a7889e4fd8122bf3e7c1
+REPRODUCE GATE: PASS (byte-identical to reference)
+8db84b01aae7b5ef0ad911ef163e5aeb2a95cebf7629a7889e4fd8122bf3e7c1  ../data/static/structural_sets.json
+8db84b01aae7b5ef0ad911ef163e5aeb2a95cebf7629a7889e4fd8122bf3e7c1  ../../validation/data/static/structural_sets.json
+byte diff: IDENTICAL (cmp exit 0)

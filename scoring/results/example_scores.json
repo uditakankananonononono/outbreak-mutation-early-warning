@@ -1,0 +1,204 @@
+[
+ {
+  "mutation": "S:N501Y",
+  "S": 0.4,
+  "tier": "TIER-1 STRUCTURE-DIRECT",
+  "breakdown": {
+   "epitope": 0.0,
+   "ace2": 0.25,
+   "cleavage": 0.0,
+   "domain": 0.15,
+   "conserved": 0.0
+  },
+  "S_ext": 0.55,
+  "S_ext_bonus": 0.15
+ },
+ {
+  "mutation": "S:E484K",
+  "S": 0.75,
+  "tier": "TIER-1 STRUCTURE-DIRECT",
+  "breakdown": {
+   "epitope": 0.35,
+   "ace2": 0.25,
+   "cleavage": 0.0,
+   "domain": 0.15,
+   "conserved": 0.0
+  },
+  "S_ext": 0.8,
+  "S_ext_bonus": 0.05
+ },
+ {
+  "mutation": "S:K417N",
+  "S": 0.6,
+  "tier": "TIER-1 STRUCTURE-DIRECT",
+  "breakdown": {
+   "epitope": 0.35,
+   "ace2": 0.25,
+   "cleavage": 0.0,
+   "domain": 0.0,
+   "conserved": 0.0
+  },
+  "S_ext": 0.75,
+  "S_ext_bonus": 0.15
+ },
+ {
+  "mutation": "S:L452R",
+  "S": 0.15,
+  "tier": "TIER-2 DOMAIN-INFERRED",
+  "breakdown": {
+   "epitope": 0.0,
+   "ace2": 0.0,
+   "cleavage": 0.0,
+   "domain": 0.15,
+   "conserved": 0.0
+  },
+  "S_ext": 0.2,
+  "S_ext_bonus": 0.05
+ },
+ {
+  "mutation": "S:T478K",
+  "S": 0.5,
+  "tier": "TIER-1 STRUCTURE-DIRECT",
+  "breakdown": {
+   "epitope": 0.35,
+   "ace2": 0.0,
+   "cleavage": 0.0,
+   "domain": 0.15,
+   "conserved": 0.0
+  },
+  "S_ext": 0.5,
+  "S_ext_bonus": 0.0
+ },
+ {
+  "mutation": "S:P681R",
+  "S": 0.15,
+  "tier": "TIER-2 DOMAIN-INFERRED",
+  "breakdown": {
+   "epitope": 0.0,
+   "ace2": 0.0,
+   "cleavage": 0.15,
+   "domain": 0.0,
+   "conserved": 0.0
+  },
+  "S_ext": 0.15,
+  "S_ext_bonus": 0.0
+ },
+ {
+  "mutation": "S:D614G",
+  "S": 0.1,
+  "tier": "TIER-3 CONSERVATION-ONLY",
+  "breakdown": {
+   "epitope": 0.0,
+   "ace2": 0.0,
+   "cleavage": 0.0,
+   "domain": 0.0,
+   "conserved": 0.1
+  },
+  "S_ext": 0.1,
+  "S_ext_bonus": 0.0
+ },
+ {
+  "mutation": "S:G142D",
+  "S": 0.0,
+  "tier": "THIN",
+  "breakdown": {
+   "epitope": 0.0,
+   "ace2": 0.0,
+   "cleavage": 0.0,
+   "domain": 0.0,
+   "conserved": 0.0
+  },
+  "reason": "canonical spike residue, no structural signal",
+  "S_ext": 0.0,
+  "S_ext_bonus": 0.0
+ },
+ {
+  "mutation": "S:D950N",
+  "S": 0.25,
+  "tier": "TIER-2 DOMAIN-INFERRED",
+  "breakdown": {
+   "epitope": 0.0,
+   "ace2": 0.0,
+   "cleavage": 0.0,
+   "domain": 0.15,
+   "conserved": 0.1
+  },
+  "S_ext": 0.25,
+  "S_ext_bonus": 0.0
+ },
+ {
+  "mutation": "S:N439K",
+  "S": 0.5,
+  "tier": "TIER-1 STRUCTURE-DIRECT",
+  "breakdown": {
+   "epitope": 0.35,
+   "ace2": 0.0,
+   "cleavage": 0.0,
+   "domain": 0.15,
+   "conserved": 0.0
+  },
+  "S_ext": 0.5,
+  "S_ext_bonus": 0.0
+ },
+ {
+  "mutation": "S:S477N",
+  "S": 0.5,
+  "tier": "TIER-1 STRUCTURE-DIRECT",
+  "breakdown": {
+   "epitope": 0.35,
+   "ace2": 0.0,
+   "cleavage": 0.0,
+   "domain": 0.15,
+   "conserved": 0.0
+  },
+  "S_ext": 0.65,
+  "S_ext_bonus": 0.15
+ },
+ {
+  "mutation": "S:Q498R",
+  "S": 0.75,
+  "tier": "TIER-1 STRUCTURE-DIRECT",
+  "breakdown": {
+   "epitope": 0.35,
+   "ace2": 0.25,
+   "cleavage": 0.0,
+   "domain": 0.15,
+   "conserved": 0.0
+  },
+  "S_ext": 0.85,
+  "S_ext_bonus": 0.1
+ },
+ {
+  "mutation": "ORF1a:P4715L",
+  "S": 0.0,
+  "tier": "UNRESOLVED",
+  "breakdown": {},
+  "reason": "non-spike gene; structural weighting covers spike only",
+  "S_ext": 0.0,
+  "S_ext_bonus": 0.0
+ },
+ {
+  "mutation": "N:S194L",
+  "S": 0.0,
+  "tier": "UNRESOLVED",
+  "breakdown": {},
+  "reason": "non-spike gene; structural weighting covers spike only",
+  "S_ext": 0.0,
+  "S_ext_bonus": 0.0
+ },
+ {
+  "mutation": "S:A222V",
+  "S": 0.0,
+  "tier": "THIN",
+  "breakdown": {
+   "epitope": 0.0,
+   "ace2": 0.0,
+   "cleavage": 0.0,
+   "domain": 0.0,
+   "conserved": 0.0
+  },
+  "reason": "canonical spike residue, no structural signal",
+  "S_ext": 0.0,
+  "S_ext_bonus": 0.0
+ }
+]
