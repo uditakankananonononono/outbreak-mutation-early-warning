@@ -21,3 +21,7 @@
   (results/b18_protocol_agreement.txt). tests: ALL PASS (26 checks).
 - Next: SCORING_REPORT.md, paper PDF (~17-21pp Times, figures), slice manifest,
   top-level manifest, seal "B17 COMPLETE".
+- 19:19 SCORING_REPORT.md committed; paper.pdf 17pp Times (5 tables incl. 191-residue
+  scored map, 4 figures), compiled with pdflatex, visually verified; layout defects
+  (longtable-in-float, DOI overflow, texttt overflow) found on inspection and fixed.
+- Next: slice MANIFEST.sha256, top-level manifest, seal "B17 COMPLETE".
