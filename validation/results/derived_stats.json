@@ -1,0 +1,25 @@
+{
+ "weighted_n": 32,
+ "weighted_tp": 24,
+ "growth_n": 42,
+ "growth_tp": 30,
+ "alerts_in_both": 31,
+ "weighted_only": [
+  "S:T250I"
+ ],
+ "growth_only_only": [
+  "M:I82T",
+  "N:A208S",
+  "N:D377Y",
+  "N:R203M",
+  "N:S232G",
+  "ORF1a:T3255I",
+  "ORF1b:D2576G",
+  "ORF3a:K16T",
+  "ORF3a:S26L",
+  "ORF7a:V82A",
+  "ORF8:I88T"
+ ],
+ "fisher_exact_p_two_sided": 0.7961516539702755,
+ "n_S_nonzero_alerts_weighted": 7
+}
