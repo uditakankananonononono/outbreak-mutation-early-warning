@@ -17,3 +17,7 @@ Steps (locked order):
 
 Out of scope (locked): live LAPIS queries, current-variant surveillance, any
 retuning of G_MIN/THETA/THETA_G, re-running the B18 catch test as a new claim.
+
+Note (seal): scanner/paper/paper.pdf is binary and lives in the Drive
+science-artifacts folder (web-UI push route is text-only); paper.tex +
+make_paper.py reproduce it. The scanner manifest therefore excludes paper.pdf.
