@@ -1,0 +1,11 @@
+{
+ "comparisons": 22,
+ "mismatches": [],
+ "s2_pass": true,
+ "deletions_out_of_b17_contract": {
+  "S:E156-": 0.0,
+  "S:F157-": 0.0,
+  "S:K310-": 0.1,
+  "S:Y144-": 0.35
+ }
+}
