@@ -1,0 +1,150 @@
+{
+ "gate": "B16 S1/S2/S4 reproduce",
+ "run_at": "2026-10-10T00:22:36",
+ "n_freezes": 21,
+ "mismatches": [],
+ "s1_pass": true,
+ "controls": {
+  "S:D614G": {
+   "module_first_flag": null,
+   "reference_first_flag_weighted": null,
+   "agree": true
+  },
+  "S:N501Y": {
+   "module_first_flag": "2020-10-31",
+   "reference_first_flag_weighted": "2020-10-31",
+   "agree": true
+  },
+  "S:L452R": {
+   "module_first_flag": null,
+   "reference_first_flag_weighted": null,
+   "agree": true
+  }
+ },
+ "s4_pass": true,
+ "calibration_scan_alerts": [
+  {
+   "freeze": "2020-05-31",
+   "n_weighted": 0
+  },
+  {
+   "freeze": "2020-06-30",
+   "n_weighted": 1
+  },
+  {
+   "freeze": "2020-07-31",
+   "n_weighted": 3
+  },
+  {
+   "freeze": "2020-08-31",
+   "n_weighted": 1
+  }
+ ],
+ "s2_spike_flagged": [
+  {
+   "mutation": "S:D253G",
+   "module_S": 0.0
+  },
+  {
+   "mutation": "S:D950H",
+   "module_S": 0.25
+  },
+  {
+   "mutation": "S:D950N",
+   "module_S": 0.25
+  },
+  {
+   "mutation": "S:E156-",
+   "module_S": 0.0
+  },
+  {
+   "mutation": "S:E484K",
+   "module_S": 0.75
+  },
+  {
+   "mutation": "S:F157-",
+   "module_S": 0.0
+  },
+  {
+   "mutation": "S:G1124V",
+   "module_S": 0.1
+  },
+  {
+   "mutation": "S:G1167V",
+   "module_S": 0.1
+  },
+  {
+   "mutation": "S:G142D",
+   "module_S": 0.0
+  },
+  {
+   "mutation": "S:H245Y",
+   "module_S": 0.35
+  },
+  {
+   "mutation": "S:I850L",
+   "module_S": 0.1
+  },
+  {
+   "mutation": "S:K310-",
+   "module_S": 0.1
+  },
+  {
+   "mutation": "S:K417T",
+   "module_S": 0.6
+  },
+  {
+   "mutation": "S:N439K",
+   "module_S": 0.5
+  },
+  {
+   "mutation": "S:N501Y",
+   "module_S": 0.4
+  },
+  {
+   "mutation": "S:P681R",
+   "module_S": 0.15
+  },
+  {
+   "mutation": "S:Q957R",
+   "module_S": 0.25
+  },
+  {
+   "mutation": "S:R158G",
+   "module_S": 0.0
+  },
+  {
+   "mutation": "S:S477N",
+   "module_S": 0.5
+  },
+  {
+   "mutation": "S:T19R",
+   "module_S": 0.0
+  },
+  {
+   "mutation": "S:T250I",
+   "module_S": 0.35
+  },
+  {
+   "mutation": "S:T29I",
+   "module_S": 0.0
+  },
+  {
+   "mutation": "S:T478K",
+   "module_S": 0.5
+  },
+  {
+   "mutation": "S:T632N",
+   "module_S": 0.0
+  },
+  {
+   "mutation": "S:W152R",
+   "module_S": 0.35
+  },
+  {
+   "mutation": "S:Y144-",
+   "module_S": 0.35
+  }
+ ],
+ "s2_note": "B17 scorer invoked via its committed CLI separately; module S values recorded here"
+}
